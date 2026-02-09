@@ -1,0 +1,112 @@
+/* Reset Dasar */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+body {
+    background-color: #8da6a7;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 950px;
+    height: 600px;
+    display: flex;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+/* --- SISI KIRI (ROBOT) --- */
+.left-side {
+    flex: 1;
+    background-color: #A2D5D6; /* Warna Teal Dasar */
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-logo-blend {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.3);
+    z-index: 10;
+}
+.brand-logo-blend img { width: 60%; }
+
+.robot-frame {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.robot-img {
+    width: 130%; /* Besarkan sedikit biar pas */
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    /* TRIK HILANGIN KOTAK-KOTAK: */
+    mix-blend-mode: darken; /* Mengambil bagian gelap (robot) & membuang bagian terang (kotak-kotak) */
+    filter: contrast(1.2) brightness(1.1);
+    opacity: 0.9;
+}
+
+/* --- SISI KANAN (FORM) --- */
+.right-side {
+    flex: 1.2;
+    padding: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lang { position: absolute; top: 30px; right: 40px; font-size: 12px; color: #aaa; cursor: pointer; }
+
+.form-container { width: 100%; max-width: 350px; margin: 0 auto; }
+h2 { font-size: 28px; margin-bottom: 25px; color: #333; }
+
+.social-btns { display: flex; gap: 10px; margin-bottom: 20px; }
+.s-btn {
+    flex: 1; padding: 10px; border: 1px solid #eee; background: white;
+    border-radius: 10px; font-size: 11px; font-weight: 600; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.google i { color: #ea4335; }
+.fb i { color: #1877f2; }
+
+.divider { text-align: center; color: #ccc; font-size: 11px; margin-bottom: 20px; }
+
+.input-field { margin-bottom: 15px; }
+.input-field label { display: block; font-size: 12px; color: #888; margin-bottom: 5px; }
+.input-field input {
+    width: 100%; padding: 10px 0; border: none; border-bottom: 2px solid #f0f0f0;
+    outline: none; font-size: 14px; transition: 0.3s;
+}
+.input-field input:focus { border-bottom-color: #A2D5D6; }
+
+.pass-wrapper { position: relative; }
+.pass-wrapper i { position: absolute; right: 0; top: 10px; color: #ccc; cursor: pointer; }
+
+.btn-submit {
+    width: 100%; padding: 16px; background: #A2D5D6; color: white;
+    border: none; border-radius: 12px; font-weight: 700; cursor: pointer;
+    margin-top: 20px; box-shadow: 0 10px 20px rgba(162, 213, 214, 0.3);
+}
+
+.footer-text { text-align: center; margin-top: 25px; font-size: 13px; color: #999; }
+.footer-text a { color: #A2D5D6; font-weight: 700; cursor: pointer; text-decoration: none; }
+
+.hidden { display: none; }
